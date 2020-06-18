@@ -1,11 +1,12 @@
 module.exports = {
+  parser: 'babel-eslint',
   env: {
     browser: true,
     es6: true,
     node: true,
     jest: true
   },
-  extends: ['airbnb-base', 'plugin:react/recommended'],
+  extends: ['airbnb-base', 'plugin:react/recommended', 'prettier'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
@@ -15,14 +16,17 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
+    strict: 0,
+    'prettier/prettier': ['error'],
     'comma-dangle': ['error', 'never'],
     'no-param-reassign': ['error', { props: false }],
-    'react/react-in-jsx-scope': 'off'
+    'react/react-in-jsx-scope': 'off',
+    'import/no-dynamic-require': 'off'
   },
-  plugins: ['react'],
+  plugins: ['react', 'prettier'],
   settings: {
     react: {
-      version: 'detect', 
+      version: 'detect'
     }
-  }   
+  }
 };

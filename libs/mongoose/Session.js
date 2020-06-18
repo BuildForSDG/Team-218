@@ -1,6 +1,4 @@
-import {
-  session, Store, MemoryStore
-} from 'next-session';
+import { session, Store, MemoryStore } from 'next-session';
 import connectMongo from 'connect-mongo';
 import PropertiesReader from 'properties-reader';
 
